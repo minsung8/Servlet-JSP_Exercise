@@ -149,7 +149,21 @@ JSTL (JSP Standard Tag Library)
 
 
 ------------------------------------------------------------------------------------------------------------
+Web Server 
+ --> html 파일과 
+     jpg, png, gif 확장자로 되어진 이미지 파일로 이루어진 정적인 문서나 이미지 파일을 
+         웹페이지로 보여지게끔 제공해주는 서버이다.
 
+WAS(Web Application Server)
+ --> Web Server 기능 + Web Container(웹컨테이너) 기능을 합친것을 말한다.
+
+ ==> Web Container(웹컨테이너)란?   
+     -- JSP(HTML 페이지속에 Java 소스가 올라가 있는 페이지) 와 
+        Servlet(웹기능을 하도록 만들어진 Java Class)을 실행시킬수 있는 소프트웨어이다.
+     
+     JSP 와 Servlet 은 자바변수가 사용되어 지므로 입력되어지는 변수값에 따라 그 내용이 변하므로 동적 웹페이지를 구현한다.
+     Web Server에 JSP 페이지를 요청하면  Web Container 가 JSP 파일을  Servlet 으로 변환하여 컴파일을 수행해주고 
+     Servlet 의 실행결과물을  Web Server에게 전달하여 화면에 보여준다.
 
 Web Server 의 종류
     -- Apache, IIS(Internet Information Server), WebtoB(티맥스소프트,국산) 
