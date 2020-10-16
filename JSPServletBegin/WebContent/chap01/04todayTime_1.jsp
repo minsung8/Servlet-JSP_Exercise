@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+    
+<%@ page import="java.util.Date" %>
 
-</body>
-</html>
+<%
+   // *** 현재시각을 알아오기 *** //
+   Date now = new Date();  // 현재시각 
+   String currentTime = String.format("%tF %tT %tA",now,now,now); 
+%>    
+    
+<%= currentTime%> 
