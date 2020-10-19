@@ -19,4 +19,31 @@
   	<url-pattern>/getMethod_1.do</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+  	<servlet-name>postMethod_2</servlet-name>
+  	<servlet-class>chap02.PostMethod_2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>postMethod_2</servlet-name>
+  	<url-pattern>/postMethod_2.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>getpostMethod_3</servlet-name>
+  	<servlet-class>chap02.GetPostMethod_3</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getpostMethod_3</servlet-name>
+  	<url-pattern>/getpostMethod_3.do</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>setCharacterEncoding</filter-name>
+  	<filter-class>my.filter.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>setCharacterEncoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
 </web-app>
