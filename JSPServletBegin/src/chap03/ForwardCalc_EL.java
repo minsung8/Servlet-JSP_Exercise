@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/03forwardCalc.do")
-public class ForwardCalc extends HttpServlet {
+@WebServlet("/03forwardCalc_EL.do")
+public class ForwardCalc_EL extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -26,8 +26,10 @@ public class ForwardCalc extends HttpServlet {
 		}
 		
 		request.setAttribute("sum", sum);
+		request.setAttribute("firstNum", firstNum);
+		request.setAttribute("secondNum", secondNum);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/chap03_standardAction/03forwardCalcView.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/chap03_standardAction/03forwardCalcView_EL.jsp");
 		dispatcher.forward(request, response);
 		
 	}
