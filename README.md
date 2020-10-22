@@ -191,3 +191,19 @@ Web Containter 의 종류
  <Context reloadable="true" privileged="true"> 으로 수정한다.
  이것을 수정해주면 프로그램 개발시 Java Class 파일에 수정을 가하여 저장하는 순간 자동으로 톰캣서버에 Java Class 파일이
  리로드 되어지므로 톰캣서버를 재구동 할 필요가 없어지게 된다.
+
+-----------------------------------------------------------
+Connection 은 데이터베이스서버에 연결하기 위해 사용되어지는 객체이다.
+객체는 새롭게 만들어질때 시스템의 자원(CPU, 메모리)의 많은 소모와 시간이 걸리게 된다.
+DAO 클래스에서 생성되어지는 메소드(insert, select, update, delete 등)를 작성하려면 매번 Connection 객체 생성을 필요로 하게된다.
+그런데 DAO 클래스의 메소드를 호출할때 마다 매번 Connection 객체를 생성해서 사용해야 한다는것은 
+시스템의 자원(CPU, 메모리)의 많은 소모와 시간이 걸리게 되므로, 이를 해결하기 위해 나온 방법이 Connection Pooling 기법이다.
+Connection Pool 은 미리 처음부터 여러개의 Connection 객체를 만들어 두고서 
+DAO 클래스의 메소드를 호출할때 마다 미리 만들어둔 Connection 객체를 공유해서 사용하는 것이다. 
+이러한 Connection Pooling 기법을 사용하면 시스템의 자원(CPU, 메모리)의 절약과 더불어 시간을 절약할 수 있게 된다. 
+톰캣서버에서도 이러한 Connection Pooling 기법을 제공하고 있는데 이것을 자카르타톰캣 DBCP(DB Connection Pool)라고 부른다.
+
+※ Connection Pool(커넥션 풀)
+: 데이터 베이스와 연결될 커넥션을 미리 만들어서 풀(pool) 속에 저장해 두고 있다가 
+  필요할 때에 커넥션을 풀에서 가져다 쓰고 다시 풀에 반환하는 기법을 의미한다.
+  (수영장에서 튜브를 빌려다 쓰는 것과 비슷한 개념이다.)
